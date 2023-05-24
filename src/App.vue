@@ -107,6 +107,8 @@ function takeOut(id) {
   }
 }
 
+
+
 </script>
 <template>
   <ul class="products-main">
@@ -120,7 +122,7 @@ function takeOut(id) {
             <tr>
               <th>Product</th>
               <th>Price</th>
-              <th>Total</th>
+              <th>Amount</th>
             </tr>
           </thead>
           <tbody class="products-item" v-for="(product, index) in products" :key="index">
@@ -133,7 +135,7 @@ function takeOut(id) {
               </div>
             </td>
             <td>{{ product.price }}</td>
-            <td>{{ (product.amount * product.price).toFixed(2) }}</td>
+
             <td>
               <div class="button">
                 <button class="buttons" @click="product.amount++">+</button>
@@ -146,18 +148,18 @@ function takeOut(id) {
         </table>
       </section>
     </div>
+   
   </ul>
-
   <div class="cart">
     <h2>Cart</h2>
+    <p v-if="cart.length === 0">Your Cart is empty</p>
 
-    <div>
+    <div v-else>
       <section>
         <table>
           <thead>
             <tr>
               <th>Product</th>
-              <th>Price</th>
               <th>Total</th>
               <th></th>
             </tr>
@@ -171,16 +173,132 @@ function takeOut(id) {
                 </div>
               </div>
             </td>
-            <td>{{ product.price }}</td>
+            
             <td>{{ (product.amount * product.price).toFixed(2) }}</td>
-            <td>{{ product.amount }}</td>
+                <td><button class="buttons" @click="product.amount++">+</button></td> 
+                <td>{{ product.amount }}</td>
+               <td><button class="buttons" @click="product.amount > 0 && product.amount--">-</button></td> 
             <td> <button class="buttonCart" @click="removeCart(index)">Remove</button></td>
           </tbody>
         </table>
       </section>
     </div>
   </div>
+ 
 </template>
 <style scoped>
+
+
+
+.products-main {
+  width: 1000px;
+  align-items: center;
+  font-size: 18px;
+  background-color: rgb(112, 9, 138);
+  padding: 30px;
+  margin: 10px 5px;
+  border-radius: 10px;  
+  top: 50%;
+  left: 50%;
+  grid-template-columns: 3fr 1fr;
+}
+
+.button {
+  background-color: rgb(112, 9, 138);
+  align-items: center; 
+  border-radius: 20px;
+  padding: 0 10px;
+  justify-content: space-around;
+  min-width: 60px;
+  margin: 10px 5px;
+  display: inline-flex;
+}
+
+.buttonCart {
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 7px 20px;
+  margin: 10px 5px;
+  background-color: blueviolet; 
+  width: 100px;
+}
+
+.buttons {
+  background: rgb(112, 9, 138);
+  border: none;
+  align-items: center;
+  font-size: 30px;
+  margin: 10px 5px;
+  padding: 0 10px;
+}
+
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+
+.products-main .products-item,
+td {
+  background-color: rgb(183, 19, 224);
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+  align-items: center;
+  font-size: 20px;
+  justify-content: space-around;
+}
+.cart {
+  font-size: 28px;
+  background-color: rgb(121, 4, 150);
+  border-radius: 10px;
+  border-width:  35px solid rgb(51, 5, 63);
+  width: 1000px;
+  height: auto;
+  padding: 30px
+}
+
+
+.item {
+  background-color: purple;
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+  border-radius: 8px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+table {
+  border-spacing: 0 30px;
+}
+tr {
+  border-bottom: 3px;
+  border-color: blueviolet;
+}
+th {
+  text-align: left;
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.name {
+  align-items: center;
+  display: flex;
+}
+
+.product {
+  align-items: center;
+  display: flex;
+}
+img{
+  max-width: 150px;
+} 
+
 
 </style>
