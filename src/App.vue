@@ -198,8 +198,6 @@ function takeOut(id) {
   padding: 30px;
   margin: 10px 5px;
   border-radius: 10px;  
-  top: 50%;
-  left: 50%;
   grid-template-columns: 3fr 1fr;
 }
 
@@ -284,7 +282,7 @@ tr {
 th {
   text-align: left;
   font-size: 25px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .name {
@@ -300,5 +298,8 @@ img{
   max-width: 150px;
 } 
 
+p{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
 </style>
