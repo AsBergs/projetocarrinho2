@@ -110,12 +110,13 @@ function takeOut(id) {
 
 
 </script>
-<template>
+<template> 
+<div>
   <ul class="products-main">
     <h1>Taylor Swift Store</h1>
     <h2>Products</h2>
 
-    <div>
+   
       <section>
         <table>
           <thead>
@@ -147,9 +148,10 @@ function takeOut(id) {
           </tbody>
         </table>
       </section>
-    </div>
+    
    
   </ul>
+</div>
   <div class="cart">
     <h2>Cart</h2>
     <p v-if="cart.length === 0">Your Cart is empty</p>
