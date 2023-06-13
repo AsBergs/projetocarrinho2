@@ -33,3 +33,4 @@ npm run build
 ```sh
 npm run lint
 ```
+Link do surge : projetocart2.surge.sh
