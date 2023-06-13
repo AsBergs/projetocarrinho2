@@ -177,7 +177,7 @@ function takeOut(id) {
             <td>{{ (product.amount * product.price).toFixed(2) }}</td>
                 <td><button class="buttons" @click="product.amount++">+</button></td> 
                 <td>{{ product.amount }}</td>
-               <td><button class="buttons" @click="product.amount > 0 && product.amount--">-</button></td> 
+               <td><button class="buttons" @click="product.amount > 1 && product.amount--">-</button></td> 
             <td> <button class="buttonCart" @click="removeCart(index)">Remove</button></td>
           </tbody>
         </table>
